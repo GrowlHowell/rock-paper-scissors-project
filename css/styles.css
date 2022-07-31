@@ -59,3 +59,7 @@ button {
     height: 150px;
     font-size: 2em;
 }
+
+button:active {
+    background: #ddd;
+}
