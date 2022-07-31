@@ -20,12 +20,13 @@ const getPlayerChoice = function() {
     return choice;
 }
 
+let computerScore = 0;
+let playerScore = 0;
+
 const game = function() {
-    let computerScore = 0;
-    let playerScore = 0;
-    const playRound = function() {
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
+    function playRound() {
+        // let playerChoice = getPlayerChoice();
+        // let computerChoice = getComputerChoice();
         if (computerChoice === "rock" && playerChoice === "rock") {
             console.log("It's a tie.");
         } else if (computerChoice === "rock" && playerChoice === "paper") {
@@ -54,16 +55,32 @@ const game = function() {
             console.log("Something didn't work right.");
         }
     }
-    for (i = 0; i < 10; i++) {
-        playRound();
-        if (computerScore === 3) {
-            alert("The computer wins the match.");
-            break;
-        } else if (playerScore === 3) {
-            alert("The player wins the match!");
-            break;
-        } else {
-            console.log("No winner determined.");
-        }
-    }
+    // for (i = 0; i < 10; i++) {
+    //     playRound();
+    //     if (computerScore === 3) {
+    //         alert("The computer wins the match.");
+    //         break;
+    //     } else if (playerScore === 3) {
+    //         alert("The player wins the match!");
+    //         break;
+    //     } else {
+    //         console.log("No winner determined.");
+    //     }
+    // }
 }
+
+let playerChoice;
+let computerChoice;
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+
+rockButton.addEventListener('click', function() {
+    playerChoice = 'rock';
+});
+paperButton.addEventListener('click', function() {
+    playerChoice = 'paper';
+});
+scissorsButton.addEventListener('click', function() {
+    playerChoice = 'scissors';
+});
