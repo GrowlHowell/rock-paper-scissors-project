@@ -79,6 +79,9 @@ function playRound() {
 }
 
 rockButton.addEventListener('click', function() {
+    if (playerScore >= 5 || computerScore >= 5) {
+        return;
+    }
     playerChoice = 'rock';
     computerChoice = getComputerChoice();
     playRound();
@@ -89,10 +92,13 @@ rockButton.addEventListener('click', function() {
         tally.innerText = "The computer wins the match!";
         lastRound.innerText = "";
     } else {
-        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+        tally.innerText = `Computer: ${computerScore} : Player: ${playerScore}`;
     }
 });
 paperButton.addEventListener('click', function() {
+    if (playerScore >= 5 || computerScore >= 5) {
+        return;
+    }
     playerChoice = 'paper';
     computerChoice = getComputerChoice();
     playRound();
@@ -103,10 +109,13 @@ paperButton.addEventListener('click', function() {
         tally.innerText = "The computer wins the match!";
         lastRound.innerText = "";
     } else {
-        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+        tally.innerText = `Computer: ${computerScore} : Player: ${playerScore}`;
     }
 });
 scissorsButton.addEventListener('click', function() {
+    if (playerScore >= 5 || computerScore >= 5) {
+        return;
+    }
     playerChoice = 'scissors';
     computerChoice = getComputerChoice();
     playRound();
@@ -117,6 +126,6 @@ scissorsButton.addEventListener('click', function() {
         tally.innerText = "The computer wins the match!";
         lastRound.innerText = "";
     } else {
-        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+        tally.innerText = `Computer: ${computerScore} : Player: ${playerScore}`;
     }
 });
