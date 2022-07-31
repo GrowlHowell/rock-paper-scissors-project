@@ -43,34 +43,36 @@ let computerChoice;
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
+const tally = document.getElementById('tally');
+const lastRound = document.getElementById('last-round');
 
 function playRound() {
     // let playerChoice = getPlayerChoice();
     // let computerChoice = getComputerChoice();
     if (computerChoice === "rock" && playerChoice === "rock") {
-        console.log("It's a tie.");
+        lastRound.innerText = "It's a tie.";
     } else if (computerChoice === "rock" && playerChoice === "paper") {
-        console.log("The player wins!");
+        lastRound.innerText = "The player wins!";
         return playerScore++;
     } else if (computerChoice === "rock" && playerChoice === "scissors") {
-        console.log("The computer wins!");
+        lastRound.innerText = "The computer wins!";
         return computerScore++;
     } else if (computerChoice === "paper" && playerChoice === "rock") {
-        console.log("The computer wins!");
+        lastRound.innerText = "The computer wins!";
         return computerScore++;
     } else if (computerChoice === "paper" && playerChoice === "paper") {
-        console.log("It's a tie.");
+        lastRound.innerText = "It's a tie.";
     } else if (computerChoice === "paper" && playerChoice === "scissors") {
-        console.log("The player wins!");
+        lastRound.innerText = "The player wins!";
         return playerScore++;
     } else if (computerChoice === "scissors" && playerChoice === "rock") {
-        console.log("The player wins!");
+        lastRound.innerText = "The player wins!";
         playerScore++;
     } else if (computerChoice === "scissors" && playerChoice === "paper") {
-        console.log("The computer wins!");
+        lastRound.innerText = "The computer wins!";
         return computerScore++;
     } else if (computerChoice === "scissors" && playerChoice === "scissors") {
-        console.log("It's a tie.");
+        lastRound.innerText = "It's a tie.";
     } else {
         console.log("Something didn't work right.");
     }
@@ -80,14 +82,17 @@ rockButton.addEventListener('click', function() {
     playerChoice = 'rock';
     computerChoice = getComputerChoice();
     playRound();
+    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
 });
 paperButton.addEventListener('click', function() {
     playerChoice = 'paper';
     computerChoice = getComputerChoice();
     playRound();
+    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
 });
 scissorsButton.addEventListener('click', function() {
     playerChoice = 'scissors';
     computerChoice = getComputerChoice();
     playRound();
+    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
 });
