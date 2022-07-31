@@ -82,17 +82,41 @@ rockButton.addEventListener('click', function() {
     playerChoice = 'rock';
     computerChoice = getComputerChoice();
     playRound();
-    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    if (playerScore == 5) {
+        tally.innerText = "The player wins the match!";
+        lastRound.innerText = "";
+    } else if (computerScore == 5) {
+        tally.innerText = "The computer wins the match!";
+        lastRound.innerText = "";
+    } else {
+        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    }
 });
 paperButton.addEventListener('click', function() {
     playerChoice = 'paper';
     computerChoice = getComputerChoice();
     playRound();
-    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    if (playerScore == 5) {
+        tally.innerText = "The player wins the match!";
+        lastRound.innerText = "";
+    } else if (computerScore == 5) {
+        tally.innerText = "The computer wins the match!";
+        lastRound.innerText = "";
+    } else {
+        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    }
 });
 scissorsButton.addEventListener('click', function() {
     playerChoice = 'scissors';
     computerChoice = getComputerChoice();
     playRound();
-    tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    if (playerScore == 5) {
+        tally.innerText = "The player wins the match!";
+        lastRound.innerText = "";
+    } else if (computerScore == 5) {
+        tally.innerText = "The computer wins the match!";
+        lastRound.innerText = "";
+    } else {
+        tally.innerText = `Computer: ${computerScore}, Player: ${playerScore}`;
+    }
 });
